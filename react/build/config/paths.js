@@ -18,17 +18,19 @@ const globs = {
     spec: '**/*.spec.js',
 };
 
+const sources = [
+    `${dirs.src}/${globs.js}`,
+];
+
+const test = [
+    `${dirs.test}/${globs.spec}`,
+];
+
 exports.make = {
-    src: [
-        `${dirs.src}/${globs.js},
-    ],
-    test: [
-        `${dirs.test}/${globs.spec},
-    ],
+    src: sources,
+    test: test,
 }
 
 exports.clean = {
-}
-
-exports.test = {
+    dist: `${dirs.dist}/${globs.js}`,
 }

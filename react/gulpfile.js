@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const require-dir = require('require-dir');
-const tasks = require-dir('tasks');
+const tasks = require-dir('build/tasks');
 
 default.taskName = 'default';
 gulp.task(default);
