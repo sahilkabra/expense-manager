@@ -15,7 +15,8 @@ cleanAll.displayName = 'clean';
 gulp.task(cleanAll);
 function cleanAll(done) {
     gulp.parallel(
-        cleanDist
+        cleanDist,
+        cleanTest
     )(done);
 }
 

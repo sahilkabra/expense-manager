@@ -1,6 +1,7 @@
-var htmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
-var HTMLWebpackPluginConfig = new htmlWebpackPlugin({
+const HTMLWebpackPluginConfig = new htmlWebpackPlugin({
   template: __dirname + '/src/index.html',
   filename: 'index.html',
   inject: 'body'
@@ -9,9 +10,18 @@ module.exports = {
   entry: [
     './src/app.js'
   ],
+  debug: true,
+  devtool: 'source-map',
+  resolve: {
+      root: path.resolve(__dirname),
+      extensions: ['', '.js', '.jsx'],
+      alias : {
+          src: 'src'
+      }
+  },
   module:{
     loaders: [
-      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/}
+      {test: /\.jsx?$/, loaders: ['babel-loader'], exclude: /node_modules/}
     ]
   },
   output:{

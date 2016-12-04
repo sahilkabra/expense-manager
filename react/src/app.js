@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-class HelloWorld extends React.Component {
-    render() {
-        return <h1>Hello, {this.props.name}</h1>;
-    }
-}
+import HelloWorld from 'src/helloworld/container';
 
 ReactDOM.render(
     <HelloWorld name='Sahil'/>,
