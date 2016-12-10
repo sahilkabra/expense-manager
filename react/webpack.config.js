@@ -21,7 +21,17 @@ module.exports = {
   },
   module:{
     loaders: [
-      {test: /\.jsx?$/, loaders: ['babel-loader'], exclude: /node_modules/}
+        {
+            test: /\.jsx?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            query: {
+                presets: ['airbnb']
+            },
+        }, {
+            test: /.json/,
+            loader: 'json'
+        }
     ]
   },
   output:{
