@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+    cars-service:
+        image: cars-service
+        container_name: "cars-service"
+        depends_on:
+            - carsdb
+        ports:
+            - 9001:9001
+        environment:
+            - PORT=9001
+            - MONGOHOST=carsdb
+            - MONGOPORT=27017
+
+    carsdb:
+        container_name: "carsdb"
+        image: mongo:4.0.0
+        volumes:
+            - /tmp/data:/data/db
+        ports:
+            - 27017:27017

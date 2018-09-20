@@ -1,0 +1,15 @@
+# Directories
+.git/
+.temp/
+dist/
+node_modules/
+
+# Files
+.gitattributes
+.gitignore
+.gitreview
+.npmignore
+.prettierignore
+package.json
+package-lock.json
+tags*

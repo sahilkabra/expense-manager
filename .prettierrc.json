@@ -1,0 +1,32 @@
+{
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.js",
+            "options": {
+                "singleQuote": true,
+                "trailingComma": "es5"
+            },
+            "parser": "babylon"
+        },
+        {
+            "files": "*.json",
+            "parser": "json"
+        },
+        {
+            "files": "*.md",
+            "options": {
+                "tabWidth": 2
+            },
+            "parser": "markdown"
+        },
+        {
+            "files": "*.ts",
+            "options": {
+                "singleQuote": true,
+                "trailingComma": "es5"
+            },
+            "parser": "typescript"
+        }
+    ]
+}
