@@ -1,7 +1,7 @@
 import config from './config';
 // import connection from './db/connection';
-import logger from './logger';
-import server from './server';
+import { logger } from './logger';
+import server from './rapi/server';
 
 // connection.connectToMongo();
 

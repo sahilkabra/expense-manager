@@ -1,3 +1,1 @@
-import CarController from './controller';
-
-export { CarController };
+export * from './controller';

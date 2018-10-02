@@ -1,20 +1,26 @@
 import Datastore = require('@google-cloud/datastore');
 import { QueryResult } from '@google-cloud/datastore/query';
 
+// import { logger } from '../logger';
 import { getStore } from './connection';
 
-export const createEntity = (key: string) => (
-    data: [{ [key: string]: any }]
-) => {
+export const toStore = (obj: any) =>
+    Object.keys(obj).map(k => ({
+        excludeFromIndexes: true,
+        name: k,
+        value: obj[k],
+    }));
+
+export const createEntity = (key: string) => (data: object) => {
     const store = getStore();
-    const dataKey = store.key([key]);
+    const dataKey = store.key(key as any);
     const entity = {
-        data,
+        data: toStore(data),
         key: dataKey,
     };
     return store
         .save(entity)
-        .then(result => result[0].mutationResults[0].key.id);
+        .then((result: any) => result[0].mutationResults[0].key.path[0].id);
 };
 
 const addIdToResult = (store: Datastore) => (result: object[]) => ({

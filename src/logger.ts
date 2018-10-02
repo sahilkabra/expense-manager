@@ -3,7 +3,7 @@ import * as winston from 'winston';
 /**
  * A default logger for the app
  */
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
     format: winston.format.json(),
     level: 'info',
     transports: [
@@ -13,5 +13,3 @@ const logger = winston.createLogger({
         }),
     ],
 });
-
-export default logger;
